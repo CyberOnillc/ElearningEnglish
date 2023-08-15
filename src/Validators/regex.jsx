@@ -1,21 +1,21 @@
 const emailRegex = (value) => {
-    //[a-zA-Z0-9.-]+@[a-z-]+\.[a-z]{2,5}
-    const emailPattern = /[a-zA-Z0-9.-]+@[a-z-]+\.[a-z]{2,5}/g
-    return emailPattern.test(value)
-}
+  const emailPattern = /^[a-zA-Z0-9.-]+@[a-z-]+\.[a-z]{2,5}$/;
+  return emailPattern.test(value);
+};
 
-const nationalCodeRegex = () => {
-    // ^[0-9]{10}$/g
-    //^(?!(\d)\1{9})\d{10}$/g
-}
+const nationalCodeRegex = (value) => {
+  const nationalCodePattern = /^[0-9]{10}$/;
+  return nationalCodePattern.test(value);
+};
 
-const phoneNumber = () => {
-    //09(1[0-9]|3[1-9]|2[1-9]|9[1-9])-?[0-9]{3}-?[0-9]{4}
-    //static phone number (home and office) => ^0[0-9]{2,}[0-9]{7,}$
-}
+const phoneNumberRegex = (value) => {
+  const phoneNumberPattern =
+    /^(09)(1[0-9]|3[1-9]|2[1-9]|9[1-9])-[0-9]{3}-[0-9]{4}$/;
+  return phoneNumberPattern.test(value);
+};
 
 export default {
-    emailRegex,
-    nationalCodeRegex,
-    phoneNumber
-}
+  emailRegex,
+  nationalCodeRegex,
+  phoneNumberRegex,
+};
